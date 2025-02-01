@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Plano de Estudos</title>
+    <style>
+        .container__conteudo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        .container__tabela {
+            width: 90%;
+            font-size: 1.5rem;
+            font-family: 'Chakra Petch', sans-serif;
+            text-align: center;
+            margin-top: 2rem;
+            border-collapse: collapse;
+        }
+        .container__tabela th, .container__tabela td {
+            border: 1px solid white;
+            padding: 1rem;
+        }
+        @media screen and (max-width: 600px) {
+            .container__tabela {
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__conteudo">
+            <div class="container__informacoes">
+                <div class="container__texto">
+                    <h1>Plano de <span class="container__texto-azul">Estudos</span></h1>
+                    <p class="texto__paragrafo">Acompanhe seu cronograma semanal</p>
+                    <label for="seletor-data">Selecione a Semana: </label>
+                    <select id="seletor-data"></select>
+                </div>
+                <table class="container__tabela">
+                    <thead>
+                        <tr>
+                            <th>Semana</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-estudos"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
