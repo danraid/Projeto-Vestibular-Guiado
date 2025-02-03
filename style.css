@@ -1,18 +1,23 @@
+/* Configuração global: reseta margens e define a cor padrão do texto */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
+    color: white; /* Define a cor do texto como branco */
 }
 
+/* Configuração do fundo da página */
 body {
     background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
-    height: 100vh;
+    height: auto; /* Ajustado para evitar cortes */
+    min-height: 100vh; /* Garante que a página expanda conforme o conteúdo */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Começa o alinhamento do topo */
     justify-content: center;
+    padding: 20px; /* Adiciona espaçamento para evitar cortes */
 }
 
+/* Adiciona uma imagem de fundo semi-transparente */
 body::before {
     background-image: url("img/code.png");
     background-repeat: no-repeat;
@@ -25,33 +30,106 @@ body::before {
     opacity: 0.4;
 }
 
+/* Configuração do container principal */
 .container {
     width: 80%;
-    height: 80%;
+    height: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; /* Mantém os elementos um abaixo do outro */
+    align-items: flex-start; /* Alinha à esquerda */
+    justify-content: flex-start;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
-    position: relative;
-    padding-top: 50px;
+    padding: 30px;
+    margin-top: 20px;
 }
 
+/* Conteúdo dentro do container */
 .container__conteudo {
     display: flex;
-    align-items: center;
-    position: absolute;
-    top: 2%;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha à esquerda */
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    top: 0;
 }
 
-.container__informacoes {
-    flex: 1;
-    padding: 3rem;
+/* Estilização do título */
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 48px;
+    text-align: left; /* Alinhado à esquerda */
+    margin-bottom: 10px;
 }
 
+/* Estilização do parágrafo explicativo */
+.texto__paragrafo {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left; /* Agora à esquerda */
+    margin-bottom: 20px;
+}
+
+/* Configuração do bloco de questões */
+#questoes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Agora alinhado à esquerda */
+}
+
+/* Cada questão dentro do simulado */
+.questao {
+    width: 90%;
+    padding: 20px;
+    border-bottom: 2px solid #1875E8;
+    margin-bottom: 15px;
+}
+
+/* Estilização do enunciado das questões */
+.questao legend {
+    font-size: 24px; /* Aumentei a fonte das questões */
+    font-family: 'Inter', sans-serif; /* Fonte igual ao texto da página */
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: left;
+    color: white;
+}
+
+/* Estilização das alternativas */
+label {
+    display: block;
+    font-size: 24px; /* Agora igual ao tamanho das alternativas */
+    margin: 5px 0;
+    text-align: left;
+}
+
+/* Estilização do resultado */
+#resultado {
+    text-align: left; /* Alinhado à esquerda */
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+/* Estilização do título e texto do resultado */
+#resultado h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#resultado h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #1875E8; /* Cor azul para destacar o resultado final */
+}
+
+/* Estilização do botão */
 .container__botao {
     border-radius: 16px;
     background: #1875E8;
@@ -61,27 +139,15 @@ body::before {
     border: none;
     margin-top: 5px;
     font-family: 'Inter', sans-serif;
-    display: inline-block;
-    position: relative;
-    top: 20px;
-    width: auto;
+    display: block;
+    width: fit-content;
     text-align: center;
     min-width: unset;
+    margin: 20px 0; /* Remove a centralização */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
-}
-
-.container__texto {
-    margin-top: -40px;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.container__texto-azul {
-    color: #1875E8;
-}
-
+/* Configuração do input de entrada de texto */
 .container__input {
     width: 100%;
     height: 72px;
@@ -95,17 +161,13 @@ body::before {
     font-family: 'Inter', sans-serif;
 }
 
+/* Estilização dos botões na página */
 .container__botoes {
     display: flex;
     gap: 2em;
 }
 
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
-}
-
+/* Estilização de parágrafos, botões e labels */
 p,
 button,
 label,
@@ -115,16 +177,12 @@ label,
     color: rgb(255, 255, 255);
 }
 
-.texto__paragrafo {
-    font-size: 32px;
-    font-weight: 400;
-    margin-top: -10px;
-}
-
+/* Configuração de botões desativados */
 button:disabled {
     background-color: gray;
 }
 
+/* Lista de materiais */
 ul#lista-materiais {
     list-style-type: none;
     padding: 0;
@@ -146,18 +204,19 @@ ul#lista-materiais a:hover {
     text-decoration: underline;
 }
 
+/* Estilização do seletor de data */
 #seletor-data {
-    color: black; /* Define a cor do texto */
-    background-color: white; /* Define a cor de fundo */
-    border: 1px solid #1875E8; /* Adiciona uma borda azul */
+    color: black;
+    background-color: white;
+    border: 1px solid #1875E8;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     padding: 8px;
     border-radius: 8px;
 }
 
-/* Estiliza as opções dentro do dropdown */
+/* Estiliza as opções dentro do seletor */
 #seletor-data option {
-    color: black; /* Cor do texto das opções */
-    background-color: white; /* Cor de fundo das opções */
+    color: black;
+    background-color: white;
 }
