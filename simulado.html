@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simulado</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container__conteudo">
+            <h1>Simulado - <span id="conteudo"></span></h1>
+            <p class="texto__paragrafo">Semana: <span id="data"></span></p>
+
+            <!-- Formulário para exibir e capturar as respostas das questões -->
+            <form id="form-simulado">
+                <div id="questoes"></div>
+                <button type="submit" class="container__botao">Enviar Respostas</button>
+            </form>
+
+            <!-- Área para exibir os resultados após o envio -->
+            <div id="resultado"></div>
+
+            <!-- Botão para voltar à página anterior -->
+            <a href="#" class="container__botao" id="voltar">Voltar</a>
+        </div>
+    </div>
+
+    <script src="simulado.js" defer></script>
+    <script>
+        document.getElementById("voltar").addEventListener("click", function (event) {
+            event.preventDefault();
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
