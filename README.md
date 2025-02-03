@@ -26,7 +26,20 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 ✅ Hiperlinks para materiais de estudo, incluindo **vídeos e exercícios**  
 ✅ Design responsivo, adaptado para **desktop e mobile**  
 
+## 📄 Documentação  
+Toda a documentação do projeto está disponível na pasta [`/docs`](docs/).  
+
+- 📖 **[Documentação SCRUM](docs/SCRUM_Documentacao.md)** → Processo ágil, backlog, sprints e entregáveis.  
+- 📖 **[Requisitos do Sistema](docs/Requisitos.md)** → Descrição detalhada dos requisitos funcionais e não funcionais.  
+- 📊 **Diagramas UML**:  
+  - 📌 **[Diagrama de Casos de Uso](docs/UML/diagrama_casos_uso.png)**  
+  - 📌 **[Diagrama de Classes](docs/UML/diagrama_classes.png)**  
+  - 📌 **[Diagrama de UX Flow](docs/UML/diagrama_ux.png)**  
+
 ## 🎯 Como Rodar o Projeto  
 1. **Clone o repositório:**  
-   ```bash
-   git clone https://github.com/danraid/Projeto-Vestibular-Guiado.git
+   ```bash  
+   git clone https://github.com/danraid/Projeto-Vestibular-Guiado.git  
+   cd Projeto-Vestibular-Guiado  
+   ```  
+2. **Abra o arquivo `index.html` no navegador**  
