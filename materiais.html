@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Materiais de Estudo</title>
 </head>
-
 <body>
     <div class="container">
         <div class="container__conteudo">
@@ -16,11 +14,25 @@
                     <h1>Materiais para <span id="conteudo"></span></h1>
                     <p class="texto__paragrafo">Semana: <span id="data"></span></p>
                 </div>
+
+                <!-- Lista de Materiais -->
                 <ul id="lista-materiais"></ul>
-                <a href="index.html" class="container__botao">Voltar</a>
+
+                <!-- Link para o Simulado -->
+                <a id="link-simulado" class="container__botao" style="display: none;">Fazer Simulado</a>
+
+                <!-- Botão para voltar -->
+                <a href="#" class="container__botao" id="voltar">Voltar</a>
             </div>
         </div>
     </div>
+
     <script src="materiais.js" defer></script>
+    <script>
+        document.getElementById("voltar").addEventListener("click", function (event) {
+            event.preventDefault();
+            window.history.back();
+        });
+    </script>
 </body>
 </html>

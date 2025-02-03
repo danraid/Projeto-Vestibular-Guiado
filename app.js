@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         try {
             const response = await fetch("cronograma.csv");
             const texto = await response.text();
-            const linhas = texto.split("\n").map(linha => linha.split(";")); // Ajuste para ponto e vírgula
+            const linhas = texto.split("\n").map(linha => linha.split(";"));
 
             if (linhas.length < 2) {
                 console.error("Arquivo CSV vazio ou mal formatado");
@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Atualizar a tabela conforme a seleção da data
     async function atualizarTabela(dataSelecionada) {
+        localStorage.setItem("semanaSelecionada", dataSelecionada); // Salva a semana escolhida
+
         const dados = await carregarDados();
         tabelaEstudos.innerHTML = "";
 
@@ -56,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         tabelaEstudos.appendChild(linha);
     }
 
-    // Preencher o seletor de data
+    // Preencher o seletor de data e restaurar a última escolha
     async function preencherSeletor() {
         const dados = await carregarDados();
         const datasUnicas = [...new Set(dados.map(item => item["Semana"]))];
@@ -68,8 +70,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             seletorData.appendChild(option);
         });
 
-        // Atualizar a tabela com a primeira data
-        if (datasUnicas.length > 0) {
+        // Restaurar a última seleção salva
+        const ultimaSemana = localStorage.getItem("semanaSelecionada");
+        if (ultimaSemana && datasUnicas.includes(ultimaSemana)) {
+            seletorData.value = ultimaSemana;
+            atualizarTabela(ultimaSemana);
+        } else if (datasUnicas.length > 0) {
             atualizarTabela(datasUnicas[0]);
         }
     }
