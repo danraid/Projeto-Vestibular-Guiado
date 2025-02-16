@@ -49,11 +49,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         const linha = document.createElement("tr");
         linha.innerHTML = `
             <td>${dadosFiltrados["Semana"] || "-"}</td>
-            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Segunda (Matemática)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Segunda (Matemática)"] || "-"}</a></td>
-            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Terça (Ciências da Natureza)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Terça (Ciências da Natureza)"] || "-"}</a></td>
-            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Quarta (Ciências Humanas)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Quarta (Ciências Humanas)"] || "-"}</a></td>
-            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Quinta (Linguagens)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Quinta (Linguagens)"] || "-"}</a></td>
-            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Sexta (Revisão/Aprofundamento)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Sexta (Revisão/Aprofundamento)"] || "-"}</a></td>
+            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Segunda (Matemática)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Segunda (Português)"] || "-"}</a></td>
+            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Terça (Ciências da Natureza)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Terça (Matemática)"] || "-"}</a></td>
+            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Quarta (Ciências Humanas)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Quarta (Ciências)"] || "-"}</a></td>
+            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Quinta (Linguagens)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Quinta (História)"] || "-"}</a></td>
+            <td><a href="materiais.html?conteudo=${encodeURIComponent(dadosFiltrados["Sexta (Revisão/Aprofundamento)"])}&data=${encodeURIComponent(dadosFiltrados["Semana"])}">${dadosFiltrados["Sexta (Geografia)"] || "-"}</a></td>
         `;
         tabelaEstudos.appendChild(linha);
     }
