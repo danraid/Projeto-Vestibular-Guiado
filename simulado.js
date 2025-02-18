@@ -70,18 +70,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     async function salvarResultado(conteudo, data, acertos, total) {
-        const API_URL = "https://projeto-vestibular-guiado.vercel.app/api/salvarSimulado"; // URL correta da API no Vercel
-
+        const API_URL = "https://projeto-vestibular-guiado.vercel.app/api/salvarSimulado"; // API do Vercel
+    
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycby0PpFe2k-8j4i5xXqxY-ogb9aU0NF_iUzjOujjTXD5P3KvLSj0O5Az1hfSYwC4MF5F/exec", {
+            const response = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ conteudo, data, acertos, total })
             });
-
+    
             const result = await response.json();
             console.log("Resposta do servidor:", result);
-
+    
             if (result.message) {
                 alert("Resultado salvo com sucesso!");
             } else {
