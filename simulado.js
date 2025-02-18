@@ -69,6 +69,21 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
+    async function salvarResultado(usuario, conteudo, data, acertos, total) {
+        try {
+            const response = await fetch("https://seu-projeto.vercel.app/api/salvarSimulado", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ usuario, conteudo, data, acertos, total })
+            });
+
+            const result = await response.json();
+            console.log("Resposta do servidor:", result);
+        } catch (error) {
+            console.error("Erro ao salvar resultado:", error);
+        }
+    }
+
     function verificarRespostas(questoes, respostas) {
         let acertos = 0;
         const resultadoDiv = document.getElementById("resultado");
@@ -98,6 +113,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
 
         resultadoDiv.innerHTML += `<h3>Você acertou ${acertos} de 5 questões!</h3>`;
+
+        // Enviar os resultados para a API
+        const usuario = "anonimo"; // Caso haja login, substitua pelo ID/nome do usuário
+        salvarResultado(usuario, conteudo, data, acertos, 5);
     }
 
     carregarQuestoes();
