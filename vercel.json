@@ -1,16 +1,11 @@
 {
     "version": 2,
     "builds": [
-      {
-        "src": "api/salvarSimulado.js",
-        "use": "@vercel/node"
-      }
+      { "src": "index.html", "use": "@vercel/static" },
+      { "src": "api/salvarSimulado.js", "use": "@vercel/node" }
     ],
     "routes": [
-      {
-        "src": "/api/salvarSimulado",
-        "dest": "/api/salvarSimulado.js"
-      }
+      { "src": "/", "dest": "/index.html" },
+      { "src": "/api/salvarSimulado", "dest": "/api/salvarSimulado.js" }
     ]
   }
-  
