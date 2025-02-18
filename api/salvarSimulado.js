@@ -23,7 +23,7 @@ export default function handler(req, res) {
 
     try {
         // URL do Google Sheets para armazenar os resultados
-        const SHEET_URL = "https://script.google.com/macros/s/AKfycbz_EnyxHQQw0P8cl_GCVs5FgaZLyxCTpT7-oiRGamZOL45DeQ5i0qaFOHSx9VQedT8hOQ/exec";
+        const SHEET_URL = "https://script.google.com/macros/s/AKfycby0PpFe2k-8j4i5xXqxY-ogb9aU0NF_iUzjOujjTXD5P3KvLSj0O5Az1hfSYwC4MF5F/exec";
 
         // Enviar os dados para o Google Sheets
         fetch(SHEET_URL, {

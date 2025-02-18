@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    async function salvarResultado(usuario, conteudo, data, acertos, total) {
+    async function salvarResultado(conteudo, data, acertos, total) {
         const API_URL = "https://projeto-vestibular-guiado.vercel.app/api/salvarSimulado"; // URL correta da API no Vercel
 
         try {
-            const response = await fetch(API_URL, {
+            const response = await fetch("https://script.google.com/macros/s/AKfycby0PpFe2k-8j4i5xXqxY-ogb9aU0NF_iUzjOujjTXD5P3KvLSj0O5Az1hfSYwC4MF5F/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ usuario, conteudo, data, acertos, total })
+                body: JSON.stringify({ conteudo, data, acertos, total })
             });
 
             const result = await response.json();
@@ -124,8 +124,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         resultadoDiv.innerHTML += `<h3>Você acertou ${acertos} de 5 questões!</h3>`;
 
         // Enviar os resultados para a API do Vercel
-        const usuario = "anonimo"; // Caso haja login, substitua pelo ID/nome do usuário
-        salvarResultado(usuario, conteudo, data, acertos, 5);
+        salvarResultado(conteudo, data, acertos, 5);
     }
 
     carregarQuestoes();
